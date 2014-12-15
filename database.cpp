@@ -16,6 +16,10 @@ database::database(QWidget *parent) :
 
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
   //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
 }
@@ -24,9 +28,16 @@ database::~database()
 {
     delete ui;
 }
+<<<<<<< HEAD
 
 //database::start()
 //{
+=======
+int database::start()
+{
+
+    // scienceservice.open();
+>>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
 
   //  scienceservice.open();
 
@@ -37,7 +48,12 @@ database::~database()
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
+<<<<<<< HEAD
 /*void database::displayCurrentPersons()
+=======
+/*
+void database::displayCurrentPersons()
+>>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
 {
    std::string search = ui->Search_edit->text().toStdString();
    std::list<Scientist> s = ScienceService.searchScientist(search);
@@ -60,6 +76,10 @@ void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
 void database::on_actionAdd_a_new_computer_triggered()
 {
    insertcomp = new Insertcomputer(this);
@@ -87,6 +107,10 @@ void database::on_tableWidget_activated(const QModelIndex &index)
 
  }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
 
 
 
