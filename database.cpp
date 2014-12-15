@@ -16,6 +16,9 @@ database::database(QWidget *parent) :
 
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
+ //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+
+
 
   //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
@@ -28,7 +31,10 @@ database::~database()
 
 
 //database::start()
+//
+//int database::start()
 //{
+
 
 int database::start()
 {
@@ -44,12 +50,14 @@ int database::start()
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
-
 /*void database::displayCurrentPersons()
 
 /*
 void database::displayCurrentPersons()
+<<<<<<< HEAD
+=======
 
+>>>>>>> fdaf210c9d5b4c82d3b0c5e0ff8fefa98f38c8ac
 {
    std::string search = ui->Search_edit->text().toStdString();
    std::list<Scientist> s = ScienceService.searchScientist(search);
@@ -77,11 +85,13 @@ void database::on_tableWidget_activated(const QModelIndex &index)
 
 void database::on_listWidget_activated(const QModelIndex &index)
 {
-    insertcomp = new Insertcomputer(this);
-    insertcomp->show();
+
 }
 
 void database::on_listWidget_2_activated(const QModelIndex &index)
+{
+}
+void database::on_listWidget_clicked(const QModelIndex &index)
 {
     addconnection addcon;
     addcon.setModal(true);
@@ -93,4 +103,17 @@ void database::on_listWidget_clicked(const QModelIndex &index)
      insert ins;
     ins.setModal(true);
     ins.exec();
+}
+void database::on_actionAdd_a_person_triggered()
+{
+    insert ins;
+   ins.setModal(true);
+   ins.exec();
+
+}
+
+void database::on_actionAdd_a_computer_triggered()
+{
+    insertcomp = new Insertcomputer(this);
+    insertcomp->show();
 }
