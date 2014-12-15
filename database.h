@@ -40,6 +40,10 @@ private slots:
 
     void on_listWidget_clicked(const QModelIndex &index);
 
+    void on_actionAdd_a_person_triggered();
+
+    void on_actionAdd_a_computer_triggered();
+
 private:
     Ui::database *ui;
     Insertcomputer *insertcomp;
