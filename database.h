@@ -29,7 +29,6 @@ private slots:
 
     void on_tableWidget_activated(const QModelIndex &index);
 
-<<<<<<< HEAD
   void on_treeWidget_activated(const QModelIndex &index);
 
     void on_Search_edit_textChanged(const QString &arg1);
@@ -45,8 +44,6 @@ private slots:
 
     void on_actionAdd_a_computer_triggered();
 
-=======
-
     void on_treeWidget_activated(const QModelIndex &index);
 
     void on_Search_edit_textChanged(const QString &arg1);
@@ -57,7 +54,6 @@ private slots:
 
     void on_listWidget_2_activated(const QModelIndex &index);
 
->>>>>>> fdaf210c9d5b4c82d3b0c5e0ff8fefa98f38c8ac
 private:
     Ui::database *ui;
     Insertcomputer *insertcomp;
