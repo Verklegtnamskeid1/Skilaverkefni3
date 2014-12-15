@@ -7,6 +7,10 @@ insert::insert(QWidget *parent) :
 {
     ui->setupUi(this);
     //ui->search2->setPlaceholderText("Search");
+    ui->lineEdit_nameperson->setPlaceholderText("For example billibob");
+    ui->lineEdit_genderperson->setPlaceholderText("Male or female");
+    ui->lineEdit_yearbornperson->setPlaceholderText("BC if your jesus");
+    ui->lineEdit_yeardeathperson->setPlaceholderText("3000 if your terminator");
 }
 
 insert::~insert()
@@ -22,3 +26,8 @@ void insert::on_lineEdit_cursorPositionChanged(int arg1, int arg2)
  * Okkur datt í hug að hafa þetta svona með insert gluggann til að byrja með í staðinn fyrir að hafa listann
  * að hafa insert gluggann sem poppar upp eins einfaldan og hægt er. Svo er ýtt bara á submit og eftir það
  * opnast aðalvalmyndin aftur  með listanum og öllum valmyndum.*/
+
+void insert::on_lineEdit_nameperson_cursorPositionChanged(int arg1, int arg2)
+{
+
+}

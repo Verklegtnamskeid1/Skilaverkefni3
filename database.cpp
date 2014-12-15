@@ -15,12 +15,7 @@ database::database(QWidget *parent) :
     ui->Search_edit->setPlaceholderText("Search");
 
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
-  //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+ //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
 }
 
@@ -28,16 +23,14 @@ database::~database()
 {
     delete ui;
 }
-<<<<<<< HEAD
+
 
 //database::start()
+//
+//int database::start()
 //{
-=======
-int database::start()
-{
 
     // scienceservice.open();
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
 
   //  scienceservice.open();
 
@@ -48,12 +41,10 @@ int database::start()
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
-<<<<<<< HEAD
 /*void database::displayCurrentPersons()
 =======
 /*
 void database::displayCurrentPersons()
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
 {
    std::string search = ui->Search_edit->text().toStdString();
    std::list<Scientist> s = ScienceService.searchScientist(search);
@@ -70,36 +61,8 @@ void database::displayCurrentPersons()
 */
 
 
-void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
-{
-    //displaydatabase-ið sem við ætlum að nota();
-}
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
-void database::on_actionAdd_a_new_computer_triggered()
-{
-   insertcomp = new Insertcomputer(this);
-   insertcomp->show();
-   //Hafa alla svona ef við viljum hafa að það sé hægt að hafa alla gluggana opna í einu.
-}
-
-void database::on_actionAdd_a_new_person_2_triggered()
-{
-    insert ins;
-    ins.setModal(true);
-    ins.exec();
-}
-
-void database::on_actionAdd_a_new_connection_triggered()
-{
-   addconnection addcon;
-   addcon.setModal(true);
-   addcon.exec();
-}
 
 void database::on_tableWidget_activated(const QModelIndex &index)
 {
@@ -107,10 +70,6 @@ void database::on_tableWidget_activated(const QModelIndex &index)
 
  }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
 
 
 
@@ -123,5 +82,14 @@ void database::on_listWidget_activated(const QModelIndex &index)
 
 void database::on_listWidget_2_activated(const QModelIndex &index)
 {
+    addconnection addcon;
+    addcon.setModal(true);
+    addcon.exec();
+}
 
+void database::on_listWidget_clicked(const QModelIndex &index)
+{
+     insert ins;
+    ins.setModal(true);
+    ins.exec();
 }

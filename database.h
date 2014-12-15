@@ -29,22 +29,17 @@ private slots:
 
     void on_tableWidget_activated(const QModelIndex &index);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
-    void on_treeWidget_activated(const QModelIndex &index);
+  void on_treeWidget_activated(const QModelIndex &index);
 
     void on_Search_edit_textChanged(const QString &arg1);
     void displayCurrentPersons();
-
-<<<<<<< HEAD
-    void on_listWidget_activated(const QModelIndex &index);
+   void on_listWidget_activated(const QModelIndex &index);
 
     void on_listWidget_2_activated(const QModelIndex &index);
 
-=======
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
+
+    void on_listWidget_clicked(const QModelIndex &index);
+
 private:
     Ui::database *ui;
     Insertcomputer *insertcomp;
