@@ -11,10 +11,7 @@ insert::insert(QWidget *parent) :
     ui->lineEdit_yearbornperson->setPlaceholderText("Add BC if your jesus");
     ui->lineEdit_yeardeathperson->setPlaceholderText("3000 if your terminator");
     //ui->search2->setPlaceholderText("Search");
-    ui->lineEdit_nameperson->setPlaceholderText("For example billibob");
-    ui->lineEdit_genderperson->setPlaceholderText("Male or female");
-    ui->lineEdit_yearbornperson->setPlaceholderText("BC if your jesus");
-    ui->lineEdit_yeardeathperson->setPlaceholderText("3000 if your terminator");
+    
 }
 
 insert::~insert()
