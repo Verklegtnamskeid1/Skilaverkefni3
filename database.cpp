@@ -13,33 +13,31 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->Search_edit->setPlaceholderText("Search");
-<<<<<<< HEAD
-    getAllScientis
+
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
-=======
   //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
->>>>>>> 5cfc50f5c398a82a87b7a14850528912e8e67d5c
+
 }
 
 database::~database()
 {
     delete ui;
 }
-<<<<<<< HEAD
-database::start()
-{
 
-    scienceservice.open();
+//database::start()
+//{
 
-}
+  //  scienceservice.open();
+
+//}
 
 //void database::createToolBars()
   //  {
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
-void database::displayCurrentPersons()
+/*void database::displayCurrentPersons()
 {
    std::string search = ui->Search_edit->text().toStdString();
    std::list<Scientist> s = ScienceService.searchScientist(search);
@@ -53,8 +51,8 @@ void database::displayCurrentPersons()
         ui->display_all->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getGender())));
     }
 }
+*/
 
-=======
 
 void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
 {
@@ -62,7 +60,6 @@ void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
 }
 
 
->>>>>>> 5cfc50f5c398a82a87b7a14850528912e8e67d5c
 void database::on_actionAdd_a_new_computer_triggered()
 {
    insertcomp = new Insertcomputer(this);
@@ -86,11 +83,21 @@ void database::on_actionAdd_a_new_connection_triggered()
 
 void database::on_tableWidget_activated(const QModelIndex &index)
 {
-<<<<<<< HEAD
+
 
  }
 
-=======
->>>>>>> 5cfc50f5c398a82a87b7a14850528912e8e67d5c
 
 
+
+
+void database::on_listWidget_activated(const QModelIndex &index)
+{
+    insertcomp = new Insertcomputer(this);
+    insertcomp->show();
+}
+
+void database::on_listWidget_2_activated(const QModelIndex &index)
+{
+
+}
