@@ -17,7 +17,6 @@ database::database(QWidget *parent) :
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
 
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
   //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
 }
@@ -47,10 +46,10 @@ int database::start()
 }*/
 
 /*void database::displayCurrentPersons()
-=======
+
 /*
 void database::displayCurrentPersons()
->>>>>>> 46bdd310f64b1a3cb2da3c4555c9e6901b211a82
+
 {
    std::string search = ui->Search_edit->text().toStdString();
    std::list<Scientist> s = ScienceService.searchScientist(search);
