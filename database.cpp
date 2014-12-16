@@ -12,6 +12,12 @@ database::database(QWidget *parent) :
     ui(new Ui::database)
 {
     ui->setupUi(this);
+
+
+    ui->tableWidget->setRowCount(10);
+    ui->tableWidget->setColumnCount(4);
+    ui->tableWidget->setItem(1, 2, new QTableWidgetItem("Hello"));
+
     ui->Search_edit->setPlaceholderText("Search");
 
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
@@ -76,8 +82,7 @@ void database::displayCurrentPersons()
 void database::on_tableWidget_activated(const QModelIndex &index)
 {
 
-
- }
+}
 
 void database::on_actionAdd_a_person_triggered()
 {
