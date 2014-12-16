@@ -14,9 +14,6 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //fillPersonTable();
-    fillComputerTable();
-
     ui->Search_edit->setPlaceholderText("Search");
 
 }
@@ -40,6 +37,7 @@ void database::fillPersonTable(){
            ui->tableWidget->setItem(counter, 4, new QTableWidgetItem(QString::fromStdString(iter->getDateOfDeath())));
            counter++;
         }
+    ui->tableWidget->setRowCount(counter);
 }
 
 void database::fillComputerTable(){
@@ -62,6 +60,7 @@ void database::fillComputerTable(){
            ui->tableWidget->setItem(counter2, 4, new QTableWidgetItem(QString::number(iter->getWasBuilt())));
            counter2++;
     }
+        ui->tableWidget->setRowCount(counter2);
 }
 
 database::~database()
@@ -90,4 +89,26 @@ void database::on_actionAdd_a_computer_triggered()
 {
     insertcomp = new Insertcomputer(this);
     insertcomp->show();
+}
+
+void database::on_pushButton_persons_clicked()
+{
+    ui->tableWidget->clearContents();
+
+    fillPersonTable();
+}
+
+void database::on_pushButton_computers_clicked()
+{
+    ui->tableWidget->clearContents();
+    fillComputerTable();
+}
+
+void database::on_pushButton_clicked()
+{
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setColumnCount(0);
+    ui->tableWidget->setRowCount(0);
+
+
 }
