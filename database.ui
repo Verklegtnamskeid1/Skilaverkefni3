@@ -49,6 +49,12 @@
       <height>451</height>
      </rect>
     </property>
+<<<<<<< HEAD
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+=======
+>>>>>>> fa5d20aef392a9457b0d3b43913bd9714ea8296d
     <property name="sortingEnabled">
      <bool>true</bool>
     </property>

@@ -3,7 +3,13 @@
 
 #include <QMainWindow>
 #include "insertcomputer.h"
+<<<<<<< HEAD
 #include <QObject>
+=======
+#include "scientistrepository.h"
+#include "scientist.h"
+#include "scienceservice.h"
+>>>>>>> d46c2b6c865c0c8adccc5f02e84b15a2544f95cc
 namespace Ui {
 class database;
 }
@@ -56,6 +62,9 @@ private slots:
 private:
     Ui::database *ui;
     Insertcomputer *insertcomp;
+    ScientistRepository scientistRepository;
+    ScienceService scienceService;
+
 };
 
 #endif // DATABASE_H

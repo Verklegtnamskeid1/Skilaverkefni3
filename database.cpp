@@ -4,6 +4,11 @@
 #include "insert.h"
 #include "addconnection.h"
 #include "scienceservice.h"
+<<<<<<< HEAD
+=======
+#include "scientist.h"
+
+>>>>>>> d46c2b6c865c0c8adccc5f02e84b15a2544f95cc
 
 database::database(QWidget *parent) :
     QMainWindow(parent),
@@ -12,18 +17,36 @@ database::database(QWidget *parent) :
     ui->setupUi(this);
 
 
+<<<<<<< HEAD
     ui->tableWidget->setRowCount(10);
 
     int ROWS = 5;
     ui->tableWidget->setRowCount(ROWS);
 
+=======
+
+   // std::list<Scientist> l = scienceService.searchScientist(searchTerm);
+>>>>>>> d46c2b6c865c0c8adccc5f02e84b15a2544f95cc
     ui->tableWidget->setColumnCount(4);
-    for(int i = 0; i < ROWS; i++){
-    ui->tableWidget->setItem(i, 0, new QTableWidgetItem("Name"));
-    ui->tableWidget->setItem(i, 1, new QTableWidgetItem("Gender"));
+    list<Scientist> currentScientists = scienceService.getAllScientists();
+       int counter = 0;
+    for(std::list<Scientist>::iterator iter = currentScientists.begin(); iter != currentScientists.end(); iter ++) {
+           ui->tableWidget->insertRow(counter);
+           ui->tableWidget->setItem(counter, 0, new QTableWidgetItem(QString::fromStdString(iter->getName())));
+           ui->tableWidget->setItem(counter, 1, new QTableWidgetItem(QString::fromStdString(iter->getGender())));
+           ui->tableWidget->setItem(counter, 2, new QTableWidgetItem(QString::fromStdString(iter->getDateOfBirth())));
+           ui->tableWidget->setItem(counter, 3, new QTableWidgetItem(QString::fromStdString(iter->getDateOfDeath())));
+           counter++;
+        }
+
+
+
+    /*for(int i = 0; i < ROWS; i++){
+    ui->tableWidget->setItem(i, 0, new QTableWidgetItem("Nafn"));
+    ui->tableWidget->setItem(i, 1, new QTableWidgetItem("Kyn"));
     ui->tableWidget->setItem(i, 2, new QTableWidgetItem("YoB"));
     ui->tableWidget->setItem(i, 3, new QTableWidgetItem("YoD"));
-    }
+    }*/
 
     ui->Search_edit->setPlaceholderText("Search");
 
@@ -76,11 +99,7 @@ void database::displayCurrentPersons()
     ui->display_all->setRowCount(s.size());
     ui->display_all->setColumnCount(4);
 
-        for (unsigned int i = 0; i < currentPersons.size(); i++) {
-        ui->display_all->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getName())));
-       ui->display_all->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getBirthyear())));
-       ui->display_all->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getDeathyear())));
-        ui->display_all->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getGender())));
+
     }
 }
 */
