@@ -4,11 +4,9 @@
 #include "insert.h"
 #include "addconnection.h"
 #include "scienceservice.h"
-<<<<<<< HEAD
-=======
+
 #include "scientist.h"
 
->>>>>>> d46c2b6c865c0c8adccc5f02e84b15a2544f95cc
 
 database::database(QWidget *parent) :
     QMainWindow(parent),
