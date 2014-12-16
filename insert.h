@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::insert *ui;
+     bool addpersonIsValid();
 };
 
 #endif // INSERT_H
