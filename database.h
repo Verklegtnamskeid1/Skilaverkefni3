@@ -41,12 +41,20 @@ private slots:
 
     void on_treeWidget_activated(const QModelIndex &index);
 
+    void on_pushButton_persons_clicked();
+
+    void on_pushButton_computers_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::database *ui;
     Insertcomputer *insertcomp;
     ScientistRepository scientistRepository;
     ScienceService scienceService;
 
+    void fillPersonTable();
+    void fillComputerTable();
 };
 
 #endif // DATABASE_H
