@@ -33,14 +33,14 @@ void insert::on_lineEdit_nameperson_cursorPositionChanged(int arg1, int arg2)
 
 }
 
-<<<<<<< HEAD
+
 /*void insert::on_pushButton_insert_clicked()
 {
-=======
+
 //void insert::on_pushButton_insert_clicked()
 //{
 /*
->>>>>>> fa5d20aef392a9457b0d3b43913bd9714ea8296d
+
 if(personInputIsValid())
 {
     clearinsertErrors();
@@ -53,12 +53,11 @@ if(personInputIsValid())
 
 
 
-<<<<<<< HEAD
 
 }*/
-=======
+
 //}
->>>>>>> fa5d20aef392a9457b0d3b43913bd9714ea8296d
+
 bool insert::addpersonIsValid()
 {
     QMessageBox msgBox;
