@@ -41,7 +41,13 @@ void insert::on_lineEdit_nameperson_cursorPositionChanged(int arg1, int arg2)
 //{
 /*
 
-if(personInputIsValid())
+void insert::on_pushButton_insert_clicked()
+{
+if (addpersonIsValid())
+{
+}
+/*
+
 {
     clearinsertErrors();
     std::string name = ui->lineEdit_nameperson->text().toStdstring();
@@ -51,35 +57,35 @@ if(personInputIsValid())
     (Person(name,gender,yearborn,yearofdeath)
 }
 
+*/
 
 
-
-}*/
-
-//}
-
+}
 bool insert::addpersonIsValid()
 {
-    QMessageBox msgBox;
+
+    ui->label_error_name->setText("");
+    ui->label_error_gender->setText("");
+    ui->label_error_yearborn->setText("");
+    ui->label_error_yearofdeath->setText("");
+    bool isValid= true;
     if (ui->lineEdit_nameperson->text().isEmpty())
     {
-        msgBox.setText("This line cannot be empty");
-        //isValid = false;
+        ui->label_error_name->setText("Name cannot be empty");
+        isValid = false;
     }
     if (ui->lineEdit_genderperson->text().isEmpty())
     {
-        msgBox.setText("This line cannot be empty");
-           // isValid = false;
+        ui->label_error_gender->setText("Gender cannot be empty");
+            isValid = false;
     }
     if (ui->lineEdit_yearbornperson->text().isEmpty())
     {
-    msgBox.setText("This line cannot be empty");
-           // isValid = false;
+    ui->label_error_yearborn("Year born cannot be empty");
+            isValid = false;
 }
-    if(ui->lineEdit_yeardeathperson->text().isEmpty())
-    {
-             msgBox.setText("This line cannot be empty");
-            //isValid=false;
+
+
+    return isValid;
 }
-    //return isValid;
-}
+
