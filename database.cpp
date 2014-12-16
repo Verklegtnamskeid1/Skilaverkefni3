@@ -13,10 +13,15 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-    ui->tableWidget->setRowCount(10);
+    int ROWS = 5;
+    ui->tableWidget->setRowCount(ROWS);
     ui->tableWidget->setColumnCount(4);
-    ui->tableWidget->setItem(1, 2, new QTableWidgetItem("Hello"));
+    for(int i = 0; i < ROWS; i++){
+    ui->tableWidget->setItem(i, 0, new QTableWidgetItem("Name"));
+    ui->tableWidget->setItem(i, 1, new QTableWidgetItem("Gender"));
+    ui->tableWidget->setItem(i, 2, new QTableWidgetItem("YoB"));
+    ui->tableWidget->setItem(i, 3, new QTableWidgetItem("YoD"));
+    }
 
     ui->Search_edit->setPlaceholderText("Search");
 
@@ -56,14 +61,10 @@ int database::start()
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
-/*void database::displayCurrentPersons()
+
 
 /*
 void database::displayCurrentPersons()
-<<<<<<< HEAD
-=======
-
->>>>>>> fdaf210c9d5b4c82d3b0c5e0ff8fefa98f38c8ac
 {
    std::string search = ui->Search_edit->text().toStdString();
    std::list<Scientist> s = ScienceService.searchScientist(search);
