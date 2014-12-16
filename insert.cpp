@@ -33,8 +33,8 @@ void insert::on_lineEdit_nameperson_cursorPositionChanged(int arg1, int arg2)
 
 }
 
-void insert::on_pushButton_insert_clicked()
-{/*
+/*void insert::on_pushButton_insert_clicked()
+{
 if(personInputIsValid())
 {
     clearinsertErrors();
@@ -45,10 +45,10 @@ if(personInputIsValid())
     (Person(name,gender,yearborn,yearofdeath)
 }
 
-*/
 
 
-}
+
+}*/
 bool insert::addpersonIsValid()
 {
     QMessageBox msgBox;
