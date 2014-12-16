@@ -15,7 +15,6 @@ database::database(QWidget *parent) :
 
 
 
-   // std::list<Scientist> l = scienceService.searchScientist(searchTerm);
     ui->tableWidget->setColumnCount(4);
     list<Scientist> currentScientists = scienceService.getAllScientists();
        int counter = 0;
@@ -28,6 +27,19 @@ database::database(QWidget *parent) :
            counter++;
         }
 
+
+
+    ui->tableWidget->setColumnCount(4);
+    list<Computer> currentComputer = scienceService.getAllComputers();
+       int counter2 = 0;
+    for(std::list<Computer>::iterator iter = currentComputer.begin(); iter != currentComputer.end(); iter ++) {
+           ui->tableWidget->insertRow(counter);
+           ui->tableWidget->setItem(counter2, 0, new QTableWidgetItem(QString::fromStdString(iter->getName())));
+           ui->tableWidget->setItem(counter2, 1, new QTableWidgetItem(QString::fromStdString(iter->getYearBuilt())));
+           ui->tableWidget->setItem(counter2, 2, new QTableWidgetItem(QString::number(iter->getType())));
+           ui->tableWidget->setItem(counter2, 3, new QTableWidgetItem(QString::number(iter->getWasBuilt())));
+           counter2++;
+        }
 
 
     /*for(int i = 0; i < ROWS; i++){
