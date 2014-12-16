@@ -44,8 +44,6 @@ void Scientist::setGender(const std::string &value)
     gender = value;
 }
 
-
-
 int Scientist::getId() const
 {
     return id;
@@ -55,5 +53,3 @@ void Scientist::setId(int value)
 {
     id = value;
 }
-
-

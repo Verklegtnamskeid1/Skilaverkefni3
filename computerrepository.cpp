@@ -55,7 +55,6 @@ std::list<Computer> computerrepository::list(std::string col, std::string mod) {
     populateComputerList(computerList, query);
 
     return computerList;
-
 }
 
 std::list<Computer> computerrepository::search(std::string searchTerm) {

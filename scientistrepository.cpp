@@ -3,14 +3,18 @@
 #include <string>
 #include <iostream>
 
-ScientistRepository::ScientistRepository() {
+ScientistRepository::ScientistRepository()
+{
     createConnection();
 }
 
-ScientistRepository::~ScientistRepository() {
+ScientistRepository::~ScientistRepository()
+{
+
 }
 
-void ScientistRepository::add(Scientist scientist) {
+void ScientistRepository::add(Scientist scientist)
+{
 
     QSqlQuery query(db);
     query.prepare("INSERT INTO Scientists (Name, DateOfBirth, DateOfDeath, Gender) VALUES (:name,:dob,:dod,:gender)");
@@ -22,7 +26,8 @@ void ScientistRepository::add(Scientist scientist) {
     query.exec();
 }
 
-void ScientistRepository::remove(std::string id) {
+void ScientistRepository::remove(std::string id)
+{
     QSqlQuery query(db);
 
     query.prepare("DELETE FROM Scientists WHERE id = :id");
@@ -36,11 +41,13 @@ void ScientistRepository::remove(std::string id) {
     query.exec();
 }
 
-std::list<Scientist> ScientistRepository::list() {
+std::list<Scientist> ScientistRepository::list()
+{
     return list("","");
 }
 
-std::list<Scientist> ScientistRepository::list(std::string col, std::string mod) {
+std::list<Scientist> ScientistRepository::list(std::string col, std::string mod)
+{
 
     std::list<Scientist> scientistList = std::list<Scientist>();
 
@@ -75,7 +82,8 @@ std::list<Scientist> ScientistRepository::search(std::string searchTerm) {
     return scientistList;
 }
 
-void ScientistRepository::populateScientistList(std::list<Scientist> &scientistList, QSqlQuery query){
+void ScientistRepository::populateScientistList(std::list<Scientist> &scientistList, QSqlQuery query)
+{
     while(query.next()){
         Scientist s = Scientist();
         s.setId(query.value("ID").toInt());

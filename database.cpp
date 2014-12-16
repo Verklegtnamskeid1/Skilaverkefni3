@@ -5,14 +5,11 @@
 #include "addconnection.h"
 #include "scienceservice.h"
 
-
-
 database::database(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::database)
 {
     ui->setupUi(this);
-
 
     ui->tableWidget->setRowCount(10);
     ui->tableWidget->setColumnCount(4);
@@ -20,13 +17,11 @@ database::database(QWidget *parent) :
 
     ui->Search_edit->setPlaceholderText("Search");
 
-    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
- //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
-
-
-  //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
 }
 
@@ -35,24 +30,22 @@ database::~database()
     delete ui;
 }
 
-
 //database::start()
 //
 //int database::start()
 //{
 
-
 int database::start()
 {
 
-    // scienceservice.open();
+    //scienceservice.open();
 
-  //  scienceservice.open();
+    //scienceservice.open();
 
 }
 
 //void database::createToolBars()
-  //  {
+    //{
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
@@ -89,7 +82,6 @@ void database::on_actionAdd_a_person_triggered()
     insert ins;
    ins.setModal(true);
    ins.exec();
-
 }
 
 void database::on_actionAdd_a_computer_triggered()
