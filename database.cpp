@@ -27,11 +27,9 @@ database::database(QWidget *parent) :
 
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
- //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
-
-
-  //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
 }
 
