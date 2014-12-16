@@ -14,63 +14,54 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6c7c16770d6e789a07c4bac3cc415efa16da6e02
-    ui->tableWidget->setColumnCount(4);
-    list<Scientist> currentScientists = scienceService.getAllScientists();
-       int counter = 0;
-    for(std::list<Scientist>::iterator iter = currentScientists.begin(); iter != currentScientists.end(); iter ++) {
-           ui->tableWidget->insertRow(counter);
-           ui->tableWidget->setItem(counter, 0, new QTableWidgetItem(QString::fromStdString(iter->getName())));
-           ui->tableWidget->setItem(counter, 1, new QTableWidgetItem(QString::fromStdString(iter->getGender())));
-           ui->tableWidget->setItem(counter, 2, new QTableWidgetItem(QString::fromStdString(iter->getDateOfBirth())));
-           ui->tableWidget->setItem(counter, 3, new QTableWidgetItem(QString::fromStdString(iter->getDateOfDeath())));
-           counter++;
-        }
-
-
-
-    ui->tableWidget->setColumnCount(4);
-    list<Computer> currentComputer = scienceService.getAllComputers();
-       int counter2 = 0;
-    for(std::list<Computer>::iterator iter = currentComputer.begin(); iter != currentComputer.end(); iter ++) {
-           ui->tableWidget->insertRow(counter);
-           ui->tableWidget->setItem(counter2, 0, new QTableWidgetItem(QString::fromStdString(iter->getName())));
-           ui->tableWidget->setItem(counter2, 1, new QTableWidgetItem(QString::fromStdString(iter->getYearBuilt())));
-           ui->tableWidget->setItem(counter2, 2, new QTableWidgetItem(QString::number(iter->getType())));
-           ui->tableWidget->setItem(counter2, 3, new QTableWidgetItem(QString::number(iter->getWasBuilt())));
-           counter2++;
-        }
-<<<<<<< HEAD
-
-
-    /*for(int i = 0; i < ROWS; i++){
-    ui->tableWidget->setItem(i, 0, new QTableWidgetItem("Nafn"));
-    ui->tableWidget->setItem(i, 1, new QTableWidgetItem("Kyn"));
-    ui->tableWidget->setItem(i, 2, new QTableWidgetItem("YoB"));
-    ui->tableWidget->setItem(i, 3, new QTableWidgetItem("YoD"));
-    }*/
-=======
->>>>>>> 6c7c16770d6e789a07c4bac3cc415efa16da6e02
+    //fillPersonTable();
+    fillComputerTable();
 
     ui->Search_edit->setPlaceholderText("Search");
 
-    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+}
 
-    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+void database::fillPersonTable(){
+    ui->tableWidget->clearContents();
+    QStringList personheader;
+    personheader << "ID" << "Name" << "Gender" << "Year born" << "Year died";
+    ui->tableWidget->setColumnCount(5);
 
-    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+    ui->tableWidget->setHorizontalHeaderLabels(personheader);
+    ui->tableWidget->setColumnHidden(0, true);
+    list<Scientist> currentScientists = scienceService.getAllScientists();
+   int counter = 0;
+    for(std::list<Scientist>::iterator iter = currentScientists.begin(); iter != currentScientists.end(); iter ++) {
+           ui->tableWidget->insertRow(counter);
+           ui->tableWidget->setItem(counter, 0, new QTableWidgetItem(QString::number(iter->getId())));
+           ui->tableWidget->setItem(counter, 1, new QTableWidgetItem(QString::fromStdString(iter->getName())));
+           ui->tableWidget->setItem(counter, 2, new QTableWidgetItem(QString::fromStdString(iter->getGender())));
+           ui->tableWidget->setItem(counter, 3, new QTableWidgetItem(QString::fromStdString(iter->getDateOfBirth())));
+           ui->tableWidget->setItem(counter, 4, new QTableWidgetItem(QString::fromStdString(iter->getDateOfDeath())));
+           counter++;
+        }
+}
 
-    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+void database::fillComputerTable(){
+    ui->tableWidget->clearContents();
+    QStringList computerheader;
+    QStringList horzHeaders = computerheader;
+    computerheader << "ID" << "Name" << "Year built" << "Type" << "Was it built?";
+    ui->tableWidget->setColumnCount(5);
 
-    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
-
-    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
-
-
+    ui->tableWidget->setColumnHidden(0, true);
+    ui->tableWidget->setHorizontalHeaderLabels(computerheader);
+    list<Computer> currentComputer = scienceService.getAllComputers();
+       int counter2 = 0;
+    for(std::list<Computer>::iterator iter = currentComputer.begin(); iter != currentComputer.end(); iter ++) {
+           ui->tableWidget->insertRow(counter2);
+           ui->tableWidget->setItem(counter2, 0, new QTableWidgetItem(QString::number(iter->getId())));
+           ui->tableWidget->setItem(counter2, 1, new QTableWidgetItem(QString::fromStdString(iter->getName())));
+           ui->tableWidget->setItem(counter2, 2, new QTableWidgetItem(QString::fromStdString(iter->getYearBuilt())));
+           ui->tableWidget->setItem(counter2, 3, new QTableWidgetItem(QString::number(iter->getType())));
+           ui->tableWidget->setItem(counter2, 4, new QTableWidgetItem(QString::number(iter->getWasBuilt())));
+           counter2++;
+    }
 }
 
 database::~database()
@@ -78,39 +69,10 @@ database::~database()
     delete ui;
 }
 
-//database::start()
-//
-//int database::start()
-//{
-
 int database::start()
 {
 
-    //scienceservice.open();
-
-    //scienceservice.open();
-
 }
-
-//void database::createToolBars()
-    //{
-  /*  //    fileToolBar = addToolBar(tr("File"));
-        fileToolBar->addAction(newAct);
-}*/
-
-
-/*
-void database::displayCurrentPersons()
-{
-   std::string search = ui->Search_edit->text().toStdString();
-   std::list<Scientist> s = ScienceService.searchScientist(search);
-    ui->display_all->setRowCount(s.size());
-    ui->display_all->setColumnCount(4);
-
-
-    }
-}
-*/
 
 void database::on_tableWidget_activated(const QModelIndex &index)
 {
