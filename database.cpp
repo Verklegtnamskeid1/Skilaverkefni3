@@ -14,19 +14,20 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->Search_edit->setPlaceholderText("Search");
+    ui->Search_edit->setPlaceholderText("Search for a person...");
+    ui->Search_edit_computer->setPlaceholderText("Search for a computer...");
 
 }
 
 void database::fillPersonTable(){
     ui->tableWidget->clearContents();
     QStringList personheader;
-    personheader << "ID" << "Name" << "Gender" << "Year born" << "Year died";
+    personheader << "ID" << "Name" << "Gender" << "Year born" << "Year dead";
     ui->tableWidget->setColumnCount(5);
 
     ui->tableWidget->setHorizontalHeaderLabels(personheader);
     ui->tableWidget->setColumnHidden(0, true);
-    list<Scientist> currentScientists = scienceService.getAllScientists();
+    currentScientists = scienceService.getAllScientists();
    int counter = 0;
     for(std::list<Scientist>::iterator iter = currentScientists.begin(); iter != currentScientists.end(); iter ++) {
            ui->tableWidget->insertRow(counter);
@@ -43,7 +44,6 @@ void database::fillPersonTable(){
 void database::fillComputerTable(){
     ui->tableWidget->clearContents();
     QStringList computerheader;
-    QStringList horzHeaders = computerheader;
     computerheader << "ID" << "Name" << "Year built" << "Type" << "Was it built?";
     ui->tableWidget->setColumnCount(5);
 
@@ -93,22 +93,55 @@ void database::on_actionAdd_a_computer_triggered()
 
 void database::on_pushButton_persons_clicked()
 {
+    ui->Search_edit->show();
+    ui->Search_edit_computer->hide();
+    ui->Search_edit_computer->clear();
     ui->tableWidget->clearContents();
-
     fillPersonTable();
+
 }
 
 void database::on_pushButton_computers_clicked()
 {
+    ui->Search_edit_computer->show();
+    ui->Search_edit->hide();
+    ui->Search_edit->clear();
     ui->tableWidget->clearContents();
     fillComputerTable();
+
 }
 
 void database::on_pushButton_clicked()
 {
+    ui->Search_edit->hide();
+    ui->Search_edit_computer->hide();
+
     ui->tableWidget->clearContents();
     ui->tableWidget->setColumnCount(0);
     ui->tableWidget->setRowCount(0);
 
+
+}
+
+void database::on_Search_edit_textChanged(const QString &arg1)
+{
+    ui->tableWidget->clear();
+    int add = 0;
+    for(std::list<Scientist>::iterator iter = currentScientists.begin(); iter != currentScientists.end(); iter ++) {
+        Scientist tempScientist = (*iter);
+        std::string searchStr = ui->Search_edit->text().toStdString();
+
+        if(currentScientists[i] == searchStr) {
+            ui->tableWidget->setItem(....);
+            currentDisplayedScientists.push_back(currentScientists[i]);
+        }
+
+        qDebug() << add;
+        ++add;
+    }
+}
+
+void database::on_Search_edit_computer_textChanged(const QString &arg1)
+{
 
 }
