@@ -43,7 +43,7 @@ int database::start()
 
   //  scienceservice.open();
 
-//}
+}
 
 //void database::createToolBars()
   //  {
@@ -79,31 +79,6 @@ void database::on_tableWidget_activated(const QModelIndex &index)
 
  }
 
-
-
-
-
-void database::on_listWidget_activated(const QModelIndex &index)
-{
-
-}
-
-void database::on_listWidget_2_activated(const QModelIndex &index)
-{
-}
-void database::on_listWidget_clicked(const QModelIndex &index)
-{
-    addconnection addcon;
-    addcon.setModal(true);
-    addcon.exec();
-}
-
-void database::on_listWidget_clicked(const QModelIndex &index)
-{
-     insert ins;
-    ins.setModal(true);
-    ins.exec();
-}
 void database::on_actionAdd_a_person_triggered()
 {
     insert ins;
