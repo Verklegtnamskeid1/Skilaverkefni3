@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "insertcomputer.h"
+#include <QObject>
 namespace Ui {
 class database;
 }
