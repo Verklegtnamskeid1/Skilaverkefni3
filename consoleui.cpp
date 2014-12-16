@@ -315,8 +315,6 @@ void ConsoleUI::handleFilterComputer(){
         }
     }
 
-
     waitForPrompt();
     clear();
 }
-

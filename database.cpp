@@ -4,6 +4,7 @@
 #include "insert.h"
 #include "addconnection.h"
 #include "scienceservice.h"
+
 #include "scientist.h"
 
 
@@ -13,8 +14,11 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6c7c16770d6e789a07c4bac3cc415efa16da6e02
     ui->tableWidget->setColumnCount(4);
     list<Scientist> currentScientists = scienceService.getAllScientists();
        int counter = 0;
@@ -40,6 +44,7 @@ database::database(QWidget *parent) :
            ui->tableWidget->setItem(counter2, 3, new QTableWidgetItem(QString::number(iter->getWasBuilt())));
            counter2++;
         }
+<<<<<<< HEAD
 
 
     /*for(int i = 0; i < ROWS; i++){
@@ -48,14 +53,23 @@ database::database(QWidget *parent) :
     ui->tableWidget->setItem(i, 2, new QTableWidgetItem("YoB"));
     ui->tableWidget->setItem(i, 3, new QTableWidgetItem("YoD"));
     }*/
+=======
+>>>>>>> 6c7c16770d6e789a07c4bac3cc415efa16da6e02
 
     ui->Search_edit->setPlaceholderText("Search");
 
-    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+
+    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+
+    //setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+
+    //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+
 
 }
 
@@ -64,24 +78,22 @@ database::~database()
     delete ui;
 }
 
-
 //database::start()
 //
 //int database::start()
 //{
 
-
 int database::start()
 {
 
-    // scienceservice.open();
+    //scienceservice.open();
 
-  //  scienceservice.open();
+    //scienceservice.open();
 
 }
 
 //void database::createToolBars()
-  //  {
+    //{
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
@@ -110,7 +122,6 @@ void database::on_actionAdd_a_person_triggered()
     insert ins;
    ins.setModal(true);
    ins.exec();
-
 }
 
 void database::on_actionAdd_a_computer_triggered()

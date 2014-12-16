@@ -2,6 +2,7 @@
 
 ScientistComputerConnections::ScientistComputerConnections()
 {
+
 }
 
 int ScientistComputerConnections::getSid() const
@@ -22,5 +23,3 @@ void ScientistComputerConnections::setCid(int value)
 {
     cid = value;
 }
-
-

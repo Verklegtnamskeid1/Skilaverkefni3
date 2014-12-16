@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "insertcomputer.h"
+#include <QObject>
 #include "scientistrepository.h"
 #include "scientist.h"
 #include "scienceservice.h"
@@ -40,7 +41,6 @@ private slots:
 
     void on_listWidget_2_activated(const QModelIndex &index);*/
 
-
     void on_listWidget_clicked(const QModelIndex &index);
 
     void on_actionAdd_a_person_triggered();
@@ -52,7 +52,6 @@ private slots:
 
     /* void on_Search_edit_textChanged(const QString &arg1);
     void displayCurrentPersons();
-
 
     void on_listWidget_activated(const QModelIndex &index);
 

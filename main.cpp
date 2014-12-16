@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 
     return a.exec();
 
-
     ConsoleUI ui = ConsoleUI();
 
     return ui.start();

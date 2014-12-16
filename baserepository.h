@@ -9,7 +9,6 @@ class BaseRepository{
 
         bool createConnection();
         QSqlDatabase getDatabaseConnection();
-
 };
 
 #endif // BASEREPOSITORY_H
