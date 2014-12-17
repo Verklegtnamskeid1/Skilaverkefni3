@@ -20,7 +20,6 @@ SOURCES += main.cpp\
     addconnection.cpp \
     computer.cpp \
     computerrepository.cpp \
-    consoleui.cpp \
     scienceservice.cpp \
     scientist.cpp \
     scientistcomputerconnections.cpp \
@@ -35,7 +34,6 @@ HEADERS  += database.h \
     baserepository.h \
     computer.h \
     computerrepository.h \
-    consoleui.h \
     main.h \
     menus.h \
     scienceservice.h \

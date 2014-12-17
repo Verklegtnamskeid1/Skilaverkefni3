@@ -19,39 +19,36 @@ public:
     explicit database(QWidget *parent = 0);
     int start();
     ~database();
+public slots:
+  virtual void resizeEvent(QResizeEvent *event);
+
 
 private slots:
-    void on_Search_edit_cursorPositionChanged(int arg1, int arg2);
 
-    void on_actionAdd_new_computer_triggered();
 
-    void on_actionAdd_a_new_computer_triggered();
-
-    void on_actionAdd_a_new_person_2_triggered();
-
-    void on_actionAdd_a_new_connection_triggered();
 
     void on_tableWidget_activated(const QModelIndex &index);
 
-    void on_listWidget_clicked(const QModelIndex &index);
 
-    void on_actionAdd_a_person_triggered();
 
-    void on_actionAdd_a_computer_triggered();
 
-    void on_treeWidget_activated(const QModelIndex &index);
+    void personstable();
 
-    void on_pushButton_persons_clicked();
+    void computerstable();
 
-    void on_pushButton_computers_clicked();
+    void cleartable();
 
-    void on_pushButton_clicked();
+    void _clickHeader(int col);
 
-    void on_Search_edit_textChanged(const QString &arg1);
 
-    void on_Search_edit_computer_textChanged(const QString &arg1);
+
+
+    //
 
 private:
+
+    bool asc = true;
+
     Ui::database *ui;
     Insertcomputer *insertcomp;
     ScientistRepository scientistRepository;

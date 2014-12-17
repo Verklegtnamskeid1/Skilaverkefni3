@@ -7,6 +7,41 @@
 
 #include "scientist.h"
 
+void database::resizeEvent(QResizeEvent* event)
+{
+
+    ui->tableWidget->move((ui->treeView->x() + ui->treeView->width()) + 20 ,
+                          ui->Search_edit->y() + 40);
+
+
+
+   // qDebug() << this->width();
+    ui->tableWidget->resize(this->width(), this->width());
+    ui->tableWidget->resize((this->width() - (ui->tableWidget->x() + 30)),
+                            (this->height() - (ui->tableWidget->y())));
+    ui->Search_edit->move(( ui->tableWidget->x() + ui->tableWidget->width()) -
+                            ui->Search_edit->width(), ui->Search_edit->y());
+
+    ui->treeView->move(ui->treeView->x(), ui->tableWidget->y() + 20);
+
+    for (int c = 0; c < ui->tableWidget->horizontalHeader()->count(); ++c)
+    {
+        ui->tableWidget->horizontalHeader()->setSectionResizeMode(
+            c, QHeaderView::Stretch);
+    }
+    ui->frame->resize(this->width(), ui->frame->height());
+    ui->frame->move(-20, 0);
+
+    ui->frame_persons->move(ui->tableWidget->x(),ui->tableWidget->y());
+    ui->frame_persons->resize(ui->tableWidget->width(), ui->tableWidget->height());
+
+    ui->frame_computers->move(ui->tableWidget->x(),ui->tableWidget->y());
+    ui->frame_computers->resize(ui->tableWidget->width(), ui->tableWidget->height());
+
+    ui->connectText->move(0, this->height() - (ui->connectText->height() + 20));
+
+}
+
 
 database::database(QWidget *parent) :
     QMainWindow(parent),
@@ -14,9 +49,31 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->Search_edit->setPlaceholderText("Search for a person...");
-    ui->Search_edit_computer->setPlaceholderText("Search for a computer...");
+    // ui->treeView->setModel(treemodel);
+    ui->treeView->header()->hide();
+    ui->treeView->setSelectionBehavior(QTreeView::SelectRows);
+    ui->treeView->setAnimated(true);
+    ui->treeView->setRootIsDecorated(false);
 
+    ui->Search_edit->setPlaceholderText("Search");
+
+    ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget->verticalHeader()->hide();
+    ui->tableWidget->hideColumn(0);
+    ui->tableWidget->setShowGrid(false);
+
+
+    ui->tableWidget->setSelectionMode( QAbstractItemView::SingleSelection );
+
+
+    ui->frame->hide();
+    ui->frame_persons->hide();
+    ui->frame_computers->hide();
+
+    connect(ui->tableWidget->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(_clickHeader(int)));
+
+
+    fillPersonTable();
 }
 
 void database::fillPersonTable(){
@@ -78,7 +135,7 @@ void database::on_tableWidget_activated(const QModelIndex &index)
 
 }
 
-void database::on_actionAdd_a_person_triggered()
+/*void database::on_actionAdd_a_person_triggered()
 {
     insert ins;
    ins.setModal(true);
@@ -90,31 +147,24 @@ void database::on_actionAdd_a_computer_triggered()
     insertcomp = new Insertcomputer(this);
     insertcomp->show();
 }
-
-void database::on_pushButton_persons_clicked()
+*/
+void database::personstable()
 {
-    ui->Search_edit->show();
-    ui->Search_edit_computer->hide();
-    ui->Search_edit_computer->clear();
-    ui->tableWidget->clearContents();
+    cleartable();
     fillPersonTable();
 
 }
 
-void database::on_pushButton_computers_clicked()
+void database::computerstable()
 {
-    ui->Search_edit_computer->show();
-    ui->Search_edit->hide();
-    ui->Search_edit->clear();
-    ui->tableWidget->clearContents();
+
+    cleartable();
     fillComputerTable();
 
 }
 
-void database::on_pushButton_clicked()
+void database::cleartable()
 {
-    ui->Search_edit->hide();
-    ui->Search_edit_computer->hide();
 
     ui->tableWidget->clearContents();
     ui->tableWidget->setColumnCount(0);
@@ -123,9 +173,23 @@ void database::on_pushButton_clicked()
 
 }
 
+void database::_clickHeader(int col){
+    if (asc)
+    {
+            ui->tableWidget->sortByColumn(col, Qt::AscendingOrder);
+            asc = false;
+    }
+    else
+    {
+        ui->tableWidget->sortByColumn(col,Qt::DescendingOrder);
+        asc = true;
+
+    }
+    qDebug() << " Sort";
+}
 
 
-void database::on_Search_edit_computer_textChanged(const QString &arg1)
+/*void database::on_Search_edit_computer_textChanged(const QString &arg1)
 {
 
-}
+}*/
