@@ -123,23 +123,7 @@ void database::on_pushButton_clicked()
 
 }
 
-void database::on_Search_edit_textChanged(const QString &arg1)
-{
-    ui->tableWidget->clear();
-    int add = 0;
-    for(std::list<Scientist>::iterator iter = currentScientists.begin(); iter != currentScientists.end(); iter ++) {
-        Scientist tempScientist = (*iter);
-        std::string searchStr = ui->Search_edit->text().toStdString();
 
-        if(currentScientists[i] == searchStr) {
-            ui->tableWidget->setItem(....);
-            currentDisplayedScientists.push_back(currentScientists[i]);
-        }
-
-        qDebug() << add;
-        ++add;
-    }
-}
 
 void database::on_Search_edit_computer_textChanged(const QString &arg1)
 {
