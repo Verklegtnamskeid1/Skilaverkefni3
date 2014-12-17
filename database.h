@@ -47,11 +47,17 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_Search_edit_textChanged(const QString &arg1);
+
+    void on_Search_edit_computer_textChanged(const QString &arg1);
+
 private:
     Ui::database *ui;
     Insertcomputer *insertcomp;
     ScientistRepository scientistRepository;
     ScienceService scienceService;
+
+    list<Scientist> currentScientists;
 
     void fillPersonTable();
     void fillComputerTable();
