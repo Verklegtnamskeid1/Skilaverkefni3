@@ -56,11 +56,13 @@ if (addpersonIsValid())
     std::string yearofdeath = ui->lineEdit_yeardeathperson->text();
     (Person(name,gender,yearborn,yearofdeath)
 }
+}
 
 */
 
 
-}
+/*
+
 bool insert::addpersonIsValid()
 {
 
@@ -88,4 +90,4 @@ bool insert::addpersonIsValid()
 
     return isValid;
 }
-
+*/
